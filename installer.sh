@@ -4,7 +4,7 @@
 # ==========================================
 
 PLUGIN_PATH="/usr/lib/enigma2/python/Plugins/Extensions/MyPluginName"
-PYTHON_URL="ضع_الرابط_المباشر_الذي_نسخته_هنا"
+PYTHON_URL="https://raw.githubusercontent.com/TAOUFIK-SAT/enigma-script/refs/heads/main/plugin.py"
 
 echo ">>> Creating plugin directory..."
 mkdir -p $PLUGIN_PATH
