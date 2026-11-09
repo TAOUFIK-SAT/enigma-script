@@ -12,6 +12,7 @@ echo ">>> Downloading TAOUFIK SAT PANEL..."
 wget -q -O "$PLUGIN_PATH/__init__.py" "https://raw.githubusercontent.com/TAOUFIK-SAT/enigma-script/main/PanelStore/__init__.py"
 wget -q -O "$PLUGIN_PATH/plugin.py" "https://raw.githubusercontent.com/TAOUFIK-SAT/enigma-script/main/PanelStore/plugin.py"
 wget -q -O "$PLUGIN_PATH/icon.png" "https://raw.githubusercontent.com/TAOUFIK-SAT/enigma-script/main/PanelStore/icon.png"
+wget -q -O "$PLUGIN_PATH/background.png" "https://raw.githubusercontent.com/TAOUFIK-SAT/enigma-script/main/PanelStore/background.png"
 
 if [ $? -eq 0 ]; then
     chmod 755 "$PLUGIN_PATH/"*.py > /dev/null 2>&1
