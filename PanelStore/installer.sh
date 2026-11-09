@@ -13,9 +13,6 @@ wget -q -O "$PLUGIN_PATH/__init__.py" "https://githubusercontent.com"
 wget -q -O "$PLUGIN_PATH/plugin.py" "https://githubusercontent.com"
 wget -q -O "$PLUGIN_PATH/icon.png" "https://githubusercontent.com"
 
-# Hna fin z dna l-masar dial sora dial l-background
-wget -q -O "$PLUGIN_PATH/background.png" "https://githubusercontent.com"
-
 if [ $? -eq 0 ]; then
     chmod 755 "$PLUGIN_PATH/"*.py > /dev/null 2>&1
     echo "------------------------------------------"
