@@ -4,7 +4,9 @@
 # ==========================================
 
 PLUGIN_PATH="/usr/lib/enigma2/python/Plugins/Extensions/MyPluginName"
-PYTHON_URL="wget -qO- https://raw.githubusercontent.com/TAOUFIK-SAT/enigma-script/refs/heads/main/installer.sh"
+
+# ضع الرابط المباشر فقط هنا بدون كلمة wget
+PYTHON_URL="https://raw.githubusercontent.com/TAOUFIK-SAT/enigma-script/main/python.py"
 
 echo ">>> Creating plugin directory..."
 mkdir -p $PLUGIN_PATH
