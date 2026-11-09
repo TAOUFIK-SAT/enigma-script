@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # ========================================================================
-# PANEL STORE - Python 3 for Enigma2
+# TAOUFIK SAT PANEL - Python 3 for Enigma2
 # Professional Store Interface with Console Terminal & Modern UI
 # ========================================================================
 
@@ -346,10 +346,10 @@ STORE_CATEGORIES = {
 
 class PanelStore(Screen):
     skin = """
-    <screen name="PanelStore" position="center,center" size="1280,720" title="Panel Store">
-        <!-- الهيدر المدمج: PANEL STORE v3.0-Pro بخط كبير وواضح -->
-        <widget name="header_main" position="20,15" size="320,45" font="Bold;22" halign="center" valign="center" backgroundColor="#b30000" foregroundColor="#ffffff" />
-        <widget name="header_right" position="350,15" size="200,45" font="Bold;20" halign="center" valign="center" backgroundColor="#3b3b6d" foregroundColor="#00ffcc" />
+    <screen name="PanelStore" position="center,center" size="1280,720" title="TAOUFIK SAT PANEL">
+        <!-- الهيدر المدمج: TAOUFIK SAT PANEL بخط كبير وواضح -->
+        <widget name="header_main" position="20,15" size="320,45" font="Bold;20" halign="center" valign="center" backgroundColor="#b30000" foregroundColor="#ffffff" />
+        <widget name="header_right" position="350,15" size="200,45" font="Bold;18" halign="center" valign="center" backgroundColor="#3b3b6d" foregroundColor="#00ffcc" />
         
         <!-- معلومات الجهاز بخط مكبر -->
         <widget name="box_info" position="560,15" size="220,45" font="Regular;17" valign="center" backgroundColor="#111118" foregroundColor="#ffffff" />
@@ -360,7 +360,7 @@ class PanelStore(Screen):
         <widget name="categories_title" position="20,75" size="360,35" font="Bold;20" foregroundColor="#ff007f" backgroundColor="#111118" />
         <widget name="categories_menu" position="20,115" size="360,500" scrollbarMode="showOnDemand" itemHeight="55" font="Regular;22" backgroundColor="#111118" foregroundColor="#ffffff" foregroundColorSelected="#ffff00" backgroundColorSelected="#2a1b3d" />
 
-        <!-- القائمة الثانية: PACKAGES (تم التعديل للجمع وتكبير الخط) -->
+        <!-- القائمة الثانية: PACKAGES -->
         <widget name="packages_title" position="400,75" size="520,35" font="Bold;20" foregroundColor="#ff007f" backgroundColor="#111118" />
         <widget name="packages_menu" position="400,115" size="520,500" scrollbarMode="showOnDemand" itemHeight="55" font="Regular;22" backgroundColor="#111118" foregroundColor="#ffffff" foregroundColorSelected="#ffff00" backgroundColorSelected="#005577" />
 
@@ -381,8 +381,8 @@ class PanelStore(Screen):
         self.session = session
         Screen.__init__(self, session)
 
-        self["header_main"] = Label(f"PANEL STORE {PLUGIN_VERSION}")
-        self["header_right"] = Label("PANEL STORE")
+        self["header_main"] = Label(f"TAOUFIK SAT {PLUGIN_VERSION}")
+        self["header_right"] = Label("TAOUFIK SAT")
 
         self["box_info"] = Label("Box: DM8000\nOS: ZERO4K")
         self["cpu_temp_info"] = Label("CPU Load: 0.27\nTemp: 65 C")
@@ -396,7 +396,7 @@ class PanelStore(Screen):
         self["categories_menu"] = MenuList(self.categories)
         self["packages_menu"] = MenuList([])
 
-        self["info_box"] = Label("Section: Plugins\nName: -\nVersion: -\n\nDescription:\nمتجر بانل احترافي لإنغما 2 مع شاشة ترمنال مباشرة.")
+        self["info_box"] = Label("Section: Plugins\nName: -\nVersion: -\n\nDescription:\nمتجر TAOUFIK SAT PANEL لإنغما 2 مع شاشة ترمنال مباشرة.")
         self["preview_image"] = Pixmap()
 
         self["btn_red"] = Label("Exit")
@@ -467,7 +467,6 @@ class PanelStore(Screen):
         if cat and pkg:
             cmd = STORE_CATEGORIES[cat].get(pkg, "")
             if cmd:
-                # فتح شاشة التيرمنال الخاصة بإنغما 2 لتنفيذ السكربت ومرئيات التثبيت
                 self.session.open(Console, title=f"Installing: {pkg}", cmdlist=[cmd])
 
     def refresh_store(self):
@@ -481,8 +480,8 @@ class PanelStore(Screen):
 def Plugins(**kwargs):
     return [
         PluginDescriptor(
-            name="PanelStore",
-            description="Panel Store - Professional Addon Downloader with Terminal",
+            name="TAOUFIK SAT PANEL",
+            description="TAOUFIK SAT PANEL - Professional Addon Downloader with Terminal",
             where=PluginDescriptor.WHERE_PLUGINMENU,
             icon="icon.png",
             fnc=lambda session, **kwargs: session.open(PanelStore),
