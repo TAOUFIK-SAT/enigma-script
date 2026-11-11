@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # ========================================================================
-# PANEL STORE - Python 3 for Enigma2
+# TAOUFIK SAT PANEL - Python 3 for Enigma2
 # Professional Store Interface with Console Terminal & Modern UI
 # ========================================================================
 
@@ -346,10 +346,10 @@ STORE_CATEGORIES = {
 
 class PanelStore(Screen):
     skin = """
-    <screen name="PanelStore" position="center,center" size="1280,720" title="Panel Store">
-        <!-- الهيدر المدمج: PANEL STORE v3.0-Pro بخط كبير وواضح -->
-        <widget name="header_main" position="20,15" size="320,45" font="Bold;22" halign="center" valign="center" backgroundColor="#b30000" foregroundColor="#ffffff" />
-        <widget name="header_right" position="350,15" size="200,45" font="Bold;20" halign="center" valign="center" backgroundColor="#3b3b6d" foregroundColor="#00ffcc" />
+    <screen name="PanelStore" position="center,center" size="1280,720" title="TAOUFIK SAT PANEL">
+        <!-- الهيدر المدمج: TAOUFIK SAT PANEL v3.0-Pro بخط كبير وواضح -->
+        <widget name="header_main" position="20,15" size="320,45" font="Bold;20" halign="center" valign="center" backgroundColor="#b30000" foregroundColor="#ffffff" />
+        <widget name="header_right" position="350,15" size="200,45" font="Bold;18" halign="center" valign="center" backgroundColor="#3b3b6d" foregroundColor="#00ffcc" />
         
         <!-- معلومات الجهاز بخط مكبر -->
         <widget name="box_info" position="560,15" size="220,45" font="Regular;17" valign="center" backgroundColor="#111118" foregroundColor="#ffffff" />
@@ -381,8 +381,8 @@ class PanelStore(Screen):
         self.session = session
         Screen.__init__(self, session)
 
-        self["header_main"] = Label(f"PANEL STORE {PLUGIN_VERSION}")
-        self["header_right"] = Label("PANEL STORE")
+        self["header_main"] = Label(f"TAOUFIK SAT {PLUGIN_VERSION}")
+        self["header_right"] = Label("TAOUFIK SAT")
 
         self["box_info"] = Label("Box: DM8000\nOS: ZERO4K")
         self["cpu_temp_info"] = Label("CPU Load: 0.27\nTemp: 65 C")
@@ -396,7 +396,7 @@ class PanelStore(Screen):
         self["categories_menu"] = MenuList(self.categories)
         self["packages_menu"] = MenuList([])
 
-        self["info_box"] = Label("Section: Plugins\nName: -\nVersion: -\n\nDescription:\nمتجر بانل احترافي لإنغما 2 مع شاشة ترمنال مباشرة.")
+        self["info_box"] = Label("Section: Plugins\nName: -\nVersion: -\n\nDescription:\nمتجر TAOUFIK SAT PANEL الاحترافي لإنغما 2 مع شاشة ترمنال مباشرة.")
         self["preview_image"] = Pixmap()
 
         self["btn_red"] = Label("Exit")
@@ -475,14 +475,14 @@ class PanelStore(Screen):
 
     def update_store(self):
         cmd = "wget https://github.com/emilnabil/download-plugins/raw/refs/heads/main/Ciefp-Panel/Ciefp-Panel.sh -O - | /bin/sh"
-        self.session.open(Console, title="Update Panel Store", cmdlist=[cmd])
+        self.session.open(Console, title="Update TAOUFIK SAT PANEL", cmdlist=[cmd])
 
 
 def Plugins(**kwargs):
     return [
         PluginDescriptor(
-            name="PanelStore",
-            description="Panel Store - Professional Addon Downloader with Terminal",
+            name="TaoufikSatPanel",
+            description="TAOUFIK SAT PANEL - Professional Addon Downloader with Terminal",
             where=PluginDescriptor.WHERE_PLUGINMENU,
             icon="icon.png",
             fnc=lambda session, **kwargs: session.open(PanelStore),
